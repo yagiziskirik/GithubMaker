@@ -1,7 +1,9 @@
-# Copyright (c) 2022 Yağız Işkırık
+# Copyright (c) 2023 Yağız Işkırık
 #
 # This software is released under the MIT License.
 # https://opensource.org/licenses/MIT
+
+from templates import Templates
 
 class GithubMaker:
     def __init__(self):
@@ -12,8 +14,15 @@ class GithubMaker:
         self.isLicense = True
         self.isReadme = True
         self.isSecurity = True
+        self.isGithubTemplates = True
         self.isOSIgnore = False
         self.isPLIgnore = False
+
+        self.userName = ""
+        self.name = ""
+        self.contactMail = ""
+        self.version = ""
+        self.repoName = ""
 
         self.programmingLanguagesList = ['Python', 'Lua']
         self.OSList = ['macOS', 'Linux', 'Windows']
@@ -83,6 +92,7 @@ class GithubMaker:
             print(f"License Type: {self.selectedLicense}")
         print(f"Readme: {self.isReadme}")
         print(f"Security: {self.isSecurity}")
+        print(f"Github Templates: {self.isGithubTemplates}")
         print(f"OS Files Ignore: {self.isOSIgnore}")
         if self.isOSIgnore:
             for i, key in enumerate(self.selectedOSL):
@@ -104,6 +114,7 @@ class GithubMaker:
                 self.selectedLicense = self.selectSingle(self.LicenseList)
             self.isReadme = self.editVar('Readme (Y/n): ', True)
             self.isSecurity = self.editVar('Security (Y/n): ', True)
+            self.isGithubTemplates = self.editVar('Github Templates (Y/n): ', True)
             self.isOSIgnore = self.editVar('OS Files Ignore (y/N): ', False)
             if self.isOSIgnore:
                 self.selectedOSL = self.selectMultiple(self.OSList.copy())
