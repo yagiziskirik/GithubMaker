@@ -12,8 +12,11 @@ class GitIgnore:
         returnFile = ""
         for file in self.programmingLanguages:
             returnFile += self.getPL(file)
+            returnFile += "\n"
         for os in self.osList:
             returnFile += self.getOS(os)
+            returnFile += "\n"
+        return returnFile
 
     def getPL(self, file):
         if file == "C++":

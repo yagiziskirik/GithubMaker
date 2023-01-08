@@ -6,6 +6,7 @@
 from templates import Templates
 from gitignorecreator import GitIgnore
 import os
+import pathlib
 
 class GithubMaker:
     def __init__(self):
@@ -23,8 +24,8 @@ class GithubMaker:
         self.userName = ""
         self.name = ""
         self.contactMail = ""
-        self.version = ""
-        self.repoName = ""
+        self.versionNumber = ""
+        self.repoName = pathlib.Path(__file__).resolve().parent.name
 
         self.programmingLanguagesList = ['Python', 'Lua', 'Node', 'C++', 'Jupyter Notebooks', 'Beef', 'Android', 'Arch Linux Packages', 'Autotools', 'Cmake', 'Go', 'Godot', 'Java', 'Kotlin', 'Objective-C', 'Packer', 'Perl', 'Qt', 'R', 'Rails', 'Ruby', 'Rust', 'Sass', 'Swift', 'Unity', 'UnrealEngine', 'VisualStudio', 'VisualStudioCode', 'Vim', 'Xcode', 'Eclipse', 'Emacs', 'JetBrains']
         self.OSList = ['macOS', 'Linux', 'Windows']
@@ -99,7 +100,7 @@ class GithubMaker:
         print(f"Repository Name: {self.repoName}")
         print(f"Full Name: {self.name}")
         print(f"Contact Mail: {self.contactMail}")
-        print(f"Program Version: {self.version}")
+        print(f"Program Version: {self.versionNumber}")
         print("--------------------")
         print(f"Code of Conduct: {self.isCodeOfConduct}")
         print(f"Contributing: {self.isContributing}")
@@ -120,19 +121,12 @@ class GithubMaker:
         print("")
 
     def start(self):
-        self.repoName = self.changeIfNotEmpty("Repository Name", self.repoName)
-        self.userName = self.changeIfNotEmpty("Github User Name", self.userName)
-        self.name = self.changeIfNotEmpty("Full Name", self.name)
-        self.contactMail = self.changeIfNotEmpty("Contact Mail", self.contactMail)
-        self.version = self.changeIfNotEmpty("Program Version", self.version)
-        self.printSettings()
-        self.isCont = self.editVar('Is it ok? (Y/n): ', True)
         while not self.isCont:
             self.repoName = self.changeIfNotEmpty("Repository Name", self.repoName)
             self.userName = self.changeIfNotEmpty("Github User Name", self.userName)
             self.name = self.changeIfNotEmpty("Full Name", self.name)
             self.contactMail = self.changeIfNotEmpty("Contact Mail", self.contactMail)
-            self.version = self.changeIfNotEmpty("Program Version", self.version)
+            self.versionNumber = self.changeIfNotEmpty("Program Version", self.versionNumber)
 
             self.isCodeOfConduct = self.editVar('Code of Conduct (Y/n): ', True)
             self.isContributing = self.editVar('Contributing (Y/n): ', True)
@@ -142,10 +136,10 @@ class GithubMaker:
             self.isReadme = self.editVar('Readme (Y/n): ', True)
             self.isSecurity = self.editVar('Security (Y/n): ', True)
             self.isGithubTemplates = self.editVar('Github Templates (Y/n): ', True)
-            self.isOSIgnore = self.editVar('OS Files Ignore (y/N): ', False)
+            self.isOSIgnore = self.editVar('OS Files Ignore (Y/n): ', True)
             if self.isOSIgnore:
                 self.selectedOSL = self.selectMultiple(self.OSList.copy())
-            self.isPLIgnore = self.editVar('Programming Language Ignore (y/N): ', False)
+            self.isPLIgnore = self.editVar('Programming Language Ignore (Y/n): ', True)
             if self.isPLIgnore:
                 self.selectedPL = self.selectMultiple(self.programmingLanguagesList.copy())
 
@@ -153,11 +147,12 @@ class GithubMaker:
             self.isCont = self.editVar('Is it ok? (Y/n): ', True)
 
         if self.isOSIgnore or self.isPLIgnore:
-            gitIgnoreFile = GitIgnore(self.selectedPL, self.selectedOSL)
+            gitIgnoreGenerator = GitIgnore(self.selectedPL, self.selectedOSL)
+            gitIgnoreFile = gitIgnoreGenerator.createIgnore()
             with open(".gitignore", "w") as f:
                 f.write(gitIgnoreFile)
 
-        allTemplates = Templates(self.userName, self.contactMail, self.version, self.name, self.repoName, self.licenseType)
+        allTemplates = Templates(self.userName, self.contactMail, self.versionNumber, self.name, self.repoName, self.selectedLicense)
 
         if self.isLicense:
             if not os.path.exists("LICENSE.md"):
@@ -203,7 +198,7 @@ class GithubMaker:
                 with open(".github/ISSUE_TEMPLATE/bug_report.md", "w") as f:
                     f.write(bugReportFile)
             if not os.path.exists(".github/ISSUE_TEMPLATE/feature_request.md"):
-                featureRequestFile = allTemplates.featureRequest()()
+                featureRequestFile = allTemplates.featureRequest()
                 with open(".github/ISSUE_TEMPLATE/feature_request.md", "w") as f:
                     f.write(featureRequestFile)
             if not os.path.exists(".github/ISSUE_TEMPLATE/question.md"):
