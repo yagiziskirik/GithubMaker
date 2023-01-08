@@ -16,7 +16,7 @@ To get an overview of the project, read the [README](README.md) file. Here are s
 
 ## Getting started
 
-[FILL THIS PART BY HAND]
+Codespace is quite easy to navigate. If you would like to add new filetypes, please test them before you send the pull request.
 
 ### Issues
 
@@ -29,10 +29,6 @@ If you spot a problem with the docs, [search if an issue already exists](https:/
 Scan through our [existing issues](https://github.com/yagiziskirik/Kerbal-Telemetry/issues?q=is%3Aissue) to find one that interests you. You can narrow down the search using `labels` as filters. Also don't forget to check out closed issues.
 
 ### Make Changes
-
-#### Make changes in the UI
-
-[FILL THIS PART BY HAND]
 
 #### Make changes in a codespace
 
