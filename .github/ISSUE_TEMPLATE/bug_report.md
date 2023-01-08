@@ -25,7 +25,6 @@ If applicable, add screenshots to help explain your problem.
 
 **Device Information (please complete the following information):**
  - OS: [e.g. macOS]
- - Browser: [e.g. chrome, safari]
  - GithubMaker Version: [e.g. v2.2.1]
 
 **Additional context**
