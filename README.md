@@ -1,7 +1,7 @@
 # GithubMaker
 ![Version 1.0.0](https://img.shields.io/badge/version-1.0.0-blue) ![License](https://img.shields.io/badge/Licence-MIT-green) ![Maintenance](https://img.shields.io/maintenance/yes/2023)
 
-Creates required files for Github.
+Creates Github related documents easily.
 
 ## Features
 * Creates Code of Conduct
