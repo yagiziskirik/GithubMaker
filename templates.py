@@ -225,7 +225,7 @@ Under these versions, you can report vulnerabilities:
 If you encounter any security vulnerabilities, you can contact me immediately from this e-mail address: {self.contactMail}"""
 
     def readme(self):
-        return f"""# Kerbal Telemetry - Now Standalone!
+        return f"""# {self.repoName}
 ![Version {self.version}](https://img.shields.io/badge/version-{self.version}-blue) ![License](https://img.shields.io/badge/Licence-{self.licenseType}-green) ![Maintenance](https://img.shields.io/maintenance/yes/{self.year})
 
 [FILL THIS SPACE]
