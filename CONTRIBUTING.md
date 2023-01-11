@@ -22,11 +22,11 @@ Codespace is quite easy to navigate. If you would like to add new filetypes, ple
 
 #### Create a new issue
 
-If you spot a problem with the docs, [search if an issue already exists](https://docs.github.com/en/github/searching-for-information-on-github/searching-on-github/searching-issues-and-pull-requests#search-by-the-title-body-or-comments). If a related issue doesn't exist, you can open a new issue using a relevant [issue form](https://github.com/yagiziskirik/Kerbal-Telemetry/issues/new/choose). 
+If you spot a problem with the docs, [search if an issue already exists](https://docs.github.com/en/github/searching-for-information-on-github/searching-on-github/searching-issues-and-pull-requests#search-by-the-title-body-or-comments). If a related issue doesn't exist, you can open a new issue using a relevant [issue form](https://github.com/yagiziskirik/GithubMaker/issues/new/choose). 
 
 #### Solve an issue
 
-Scan through our [existing issues](https://github.com/yagiziskirik/Kerbal-Telemetry/issues?q=is%3Aissue) to find one that interests you. You can narrow down the search using `labels` as filters. Also don't forget to check out closed issues.
+Scan through our [existing issues](https://github.com/yagiziskirik/GithubMaker/issues?q=is%3Aissue) to find one that interests you. You can narrow down the search using `labels` as filters. Also don't forget to check out closed issues.
 
 ### Make Changes
 
@@ -75,9 +75,11 @@ For content changes, make sure that you:
     * :checkered_flag: `:checkered_flag:` when fixing something on Windows
     * :bug: `:bug:` when fixing a bug
     * :fire: `:fire:` when removing code or files
+    * :sparkles: `:sparkles:` when adding new files
     * :lock: `:lock:` when dealing with security
     * :arrow_up: `:arrow_up:` when upgrading dependencies
     * :arrow_down: `:arrow_down:` when downgrading dependencies
+    * :tada: `:tada:` when including new update files
 
 ### Pull Request
 
