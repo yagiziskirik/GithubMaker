@@ -2076,6 +2076,7 @@ For content changes, make sure that you:
     * :bug: `:bug:` when fixing a bug
     * :fire: `:fire:` when removing code or files
     * :sparkles: `:sparkles:` when adding new files
+    * :wrench: `:wrench:` when updating files
     * :lock: `:lock:` when dealing with security
     * :arrow_up: `:arrow_up:` when upgrading dependencies
     * :arrow_down: `:arrow_down:` when downgrading dependencies
