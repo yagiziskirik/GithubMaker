@@ -3304,35 +3304,42 @@ class GithubMaker:
 
         allTemplates = Templates(self.userName, self.contactMail, self.versionNumber, self.name, self.repoName, self.selectedLicense)
 
+        print("")
+
         if self.isLicense:
             if not os.path.exists("LICENSE.md"):
                 licenseFile = allTemplates.getLicense()
                 with open("LICENSE.md", "w") as f:
                     f.write(licenseFile)
+                print("License file created.")
 
         if self.isCodeOfConduct:
             if not os.path.exists("CODE_OF_CONDUCT.md"):
                 codeOfConductFile = allTemplates.codeOfConduct()
                 with open("CODE_OF_CONDUCT.md", "w") as f:
                     f.write(codeOfConductFile)
+                print("Code of conduct has been created.")
 
         if self.isContributing:
             if not os.path.exists("CONTRIBUTING.md"):
                 contributingFile = allTemplates.contributing()
                 with open("CONTRIBUTING.md", "w") as f:
                     f.write(contributingFile)
+                print("[EDIT CONTRIBUTING.md] Contributing file has been created. Please edit the file to your needs.")
 
         if self.isSecurity:
             if not os.path.exists("SECURITY.md"):
                 securityFile = allTemplates.security()
                 with open("SECURITY.md", "w") as f:
                     f.write(securityFile)
+                print("[OPTIONAL SECURITY.md] Security file has been created. You can edit the file if necessary.")
 
         if self.isReadme:
             if not os.path.exists("README.md"):
                 readmeFile = allTemplates.readme()
                 with open("README.md", "w") as f:
                     f.write(readmeFile)
+                print("[EDIR REAMDE.md] Readme file has been created. Please edit the file to your needs.")
 
         if self.isGithubTemplates:
             if not os.path.exists(".github"):
@@ -3343,17 +3350,24 @@ class GithubMaker:
                 pullRequestFile = allTemplates.pullRequestTemplate()
                 with open(".github/PULL_REQUEST_TEMPLATE.md", "w") as f:
                     f.write(pullRequestFile)
+                print("Pull Request Template file has been created.")
             if not os.path.exists(".github/ISSUE_TEMPLATE/bug_report.md"):
                 bugReportFile = allTemplates.bugReport()
                 with open(".github/ISSUE_TEMPLATE/bug_report.md", "w") as f:
                     f.write(bugReportFile)
+                print("[OPTIONAL .github/ISSUE_TEMPLATE/bug_report.md] Bug Report template file has been created. You can edit the file if necessary.")
             if not os.path.exists(".github/ISSUE_TEMPLATE/feature_request.md"):
                 featureRequestFile = allTemplates.featureRequest()
                 with open(".github/ISSUE_TEMPLATE/feature_request.md", "w") as f:
                     f.write(featureRequestFile)
+                print("Feature Request template file has been created.")
             if not os.path.exists(".github/ISSUE_TEMPLATE/question.md"):
                 questionFile = allTemplates.question()
                 with open(".github/ISSUE_TEMPLATE/question.md", "w") as f:
                     f.write(questionFile)
+                print("Question template file has been created.")
+
+
+        print("All the files created, thank you for using GithubMaker!")
 
 GithubMaker()
