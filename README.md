@@ -1,5 +1,5 @@
 # GithubMaker
-![Version 1.1.1](https://img.shields.io/badge/version-1.1.1-blue) ![License](https://img.shields.io/badge/Licence-MIT-green) ![Maintenance](https://img.shields.io/maintenance/yes/2023)
+![Version 1.1.2](https://img.shields.io/badge/version-1.1.2-blue) ![License](https://img.shields.io/badge/Licence-MIT-green) ![Maintenance](https://img.shields.io/maintenance/yes/2023)
 
 ![PyPI - Downloads](https://img.shields.io/pypi/dm/GithubMaker) ![PyPI - License](https://img.shields.io/pypi/l/GithubMaker) ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/GithubMaker) ![PyPI](https://img.shields.io/pypi/v/GithubMaker) ![PyPI - Wheel](https://img.shields.io/pypi/wheel/GithubMaker) ![PyPI - Implementation](https://img.shields.io/pypi/implementation/GithubMaker)
 
@@ -35,4 +35,5 @@ python -m GithubMaker.make
 
 * Fill all the required fields.
 * If a file is already there, it won't be overwritten.
+* Program guides you which files to edit. You can follow the instructions as needed.
 * Done!
