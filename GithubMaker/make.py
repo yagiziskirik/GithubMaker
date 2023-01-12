@@ -3340,7 +3340,7 @@ class GithubMaker:
                 readmeFile = allTemplates.readme()
                 with open("README.md", "w") as f:
                     f.write(readmeFile)
-                print("[EDIR REAMDE.md] Readme file has been created. Please edit the file to your needs.")
+                print("[EDIT README.md] Readme file has been created. Please edit the file to your needs.")
 
         if self.isGithubTemplates:
             if not os.path.exists(".github"):

@@ -1,9 +1,9 @@
 # GithubMaker
-![Version 1.1.2](https://img.shields.io/badge/version-1.1.2-blue) ![License](https://img.shields.io/badge/Licence-MIT-green) ![Maintenance](https://img.shields.io/maintenance/yes/2023)
+![Version 1.1.3](https://img.shields.io/badge/version-1.1.3-blue) ![License](https://img.shields.io/badge/Licence-MIT-green) ![Maintenance](https://img.shields.io/maintenance/yes/2023)
 
 ![PyPI - Downloads](https://img.shields.io/pypi/dm/GithubMaker) ![PyPI - License](https://img.shields.io/pypi/l/GithubMaker) ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/GithubMaker) ![PyPI](https://img.shields.io/pypi/v/GithubMaker) ![PyPI - Wheel](https://img.shields.io/pypi/wheel/GithubMaker) ![PyPI - Implementation](https://img.shields.io/pypi/implementation/GithubMaker)
 
-Creates Github related documents easily. Also, all of these files has been created with this script.
+Creates Github related documents easily. Also, all of this repository's files has been created with this script.
 
 ## Features
 * Creates Code of Conduct
