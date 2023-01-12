@@ -3186,8 +3186,6 @@ class GithubMaker:
         self.selectedOSL = []
         self.selectedLicense = "MIT"
 
-        self.start()
-
     def editVar(self, inputTxt, defaultVal):
         while True:
             tempVar = input(inputTxt)
@@ -3371,4 +3369,6 @@ class GithubMaker:
 
         print("All the files created, thank you for using GithubMaker!")
 
-GithubMaker()
+if __name__ == "__main__":
+    gm = GithubMaker()
+    gm.start()
