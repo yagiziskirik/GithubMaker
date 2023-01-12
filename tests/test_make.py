@@ -6,6 +6,7 @@
 import GithubMaker.make as gm
 from datetime import datetime
 import pytest
+import builtins
 
 
 timeNow = datetime.now().year
@@ -13,8 +14,6 @@ TEST_NAME = "John Doe"
 
 
 # Input Faker
-import builtins
-
 input_values = []
 print_values = []
 
@@ -46,7 +45,7 @@ def set_keyboard_input(mocked_inputs):
     input_values = mocked_inputs
 
 
-# LICENSE GENERATION TESTS
+# LICENSE GENERATION TESTS
 ISC_License = f"""ISC License
 
 Copyright (c) {timeNow} {TEST_NAME}
@@ -85,12 +84,14 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE."""
 
+
 @pytest.mark.parametrize('licenseType, name, result', [
     ('ISC', TEST_NAME, ISC_License),
     ('MIT', TEST_NAME, MIT_License)
 ])
 def test_license_generation(licenseType, name, result):
     assert gm.Templates('', '', '', name, '', licenseType).getLicense() == result
+
 
 @pytest.mark.parametrize('userInput, value, expected', [
     ('', True, True),
@@ -109,6 +110,7 @@ def test_editVar(userInput, value, expected):
     set_keyboard_input([userInput])
     returnVal = newGm.editVar("Test", value)
     assert returnVal == expected
+
 
 @pytest.mark.parametrize('userInput, value, expected', [
     ('Test', 'Test', 'Test'),

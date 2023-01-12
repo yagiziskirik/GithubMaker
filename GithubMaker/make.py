@@ -7,6 +7,7 @@ import os
 import pathlib
 from datetime import datetime
 
+
 class GitIgnore:
     def __init__(self, programmingLanguages, osList):
         self.programmingLanguages = programmingLanguages
@@ -17,8 +18,8 @@ class GitIgnore:
         for file in self.programmingLanguages:
             returnFile += self.getPL(file)
             returnFile += "\n\n"
-        for os in self.osList:
-            returnFile += self.getOS(os)
+        for osType in self.osList:
+            returnFile += self.getOS(osType)
             returnFile += "\n\n"
         return returnFile
 
@@ -171,8 +172,8 @@ m4/lt~obsolete.m4
 
 # Generated Makefile
 # (meta build system like autotools,
-# can automatically generate from config.status script
-# (which is called by configure script))
+   # can automatically generate from config.status script
+   # (which is called by configure script))
 Makefile"""
         elif file == "Cmake":
             return """#Cmake
@@ -502,9 +503,9 @@ packer_cache/
 crash.log
 
 # https://www.packer.io/guides/hcl/variables
-# Exclude all .pkrvars.hcl files, which are likely to contain sensitive data, 
-# such as password, private keys, and other secrets. These should not be part of 
-# version control as they are data points which are potentially sensitive and 
+# Exclude all .pkrvars.hcl files, which are likely to contain sensitive data,
+# such as password, private keys, and other secrets. These should not be part of
+# version control as they are data points which are potentially sensitive and
 # subject to change depending on the environment.
 #
 *.pkrvars.hcl
@@ -1239,7 +1240,7 @@ bld/
 #wwwroot/
 
 # Visual Studio 2017 auto generated files
-Generated\ Files/
+Generated\\ Files/
 
 # MSTest test Results
 [Tt]est[Rr]esult*/
@@ -1706,13 +1707,13 @@ local.properties
             return """# Emacs
 # -*- mode: gitignore; -*-
 *~
-\#*\#
+\\#*\\#
 /.emacs.desktop
 /.emacs.desktop.lock
 *.elc
 auto-save-list
 tramp
-.\#*
+.\\#*
 
 # Org-mode
 .org-id-locations
@@ -1900,6 +1901,7 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk"""
 
+
 class Templates:
     def __init__(self, userName, contactMail, version, name, repoName, licenseType):
         self.userName = userName
@@ -1924,7 +1926,7 @@ We pledge to act and interact in ways that contribute to an open, welcoming, div
 
 Examples of behavior that contributes to a positive environment for our community include:
 
-* Demonstrating empathy and kindness toward other people
+    * Demonstrating empathy and kindness toward other people
 * Being respectful of differing opinions, viewpoints, and experiences
 * Giving and gracefully accepting constructive feedback
 * Accepting responsibility and apologizing to those affected by our mistakes, and learning from the experience
@@ -1932,7 +1934,7 @@ Examples of behavior that contributes to a positive environment for our communit
 
 Examples of unacceptable behavior include:
 
-* The use of sexualized language or imagery, and sexual attention or advances of any kind
+    * The use of sexualized language or imagery, and sexual attention or advances of any kind
 * Trolling, insulting or derogatory comments, and personal or political attacks
 * Public or private harassment
 * Publishing others' private information, such as a physical or email address, without their explicit permission
@@ -1958,7 +1960,7 @@ All community leaders are obligated to respect the privacy and security of the r
 
 Community leaders will follow these Community Impact Guidelines in determining the consequences for any action they deem in violation of this Code of Conduct:
 
-### 1. Correction
+    ### 1. Correction
 
 **Community Impact**: Use of inappropriate language or other behavior deemed unprofessional or unwelcome in the community.
 
@@ -1996,11 +1998,11 @@ For answers to common questions about this code of conduct, see the FAQ at [http
 [FAQ]: https://www.contributor-covenant.org/faq
 [translations]: https://www.contributor-covenant.org/translations
 """
-    
+
     def contributing(self):
         return f"""# Welcome to {self.repoName} contributing guide <!-- omit in toc -->
 
-Thank you for investing your time in contributing to my project! Any contribution you make will be reflected on [{self.repoName}](https://github.com/{self.userName}/{self.repoName.replace(" ", "-")}) page :sparkles:. 
+Thank you for investing your time in contributing to my project! Any contribution you make will be reflected on [{self.repoName}](https://github.com/{self.userName}/{self.repoName.replace(" ", "-")}) page :sparkles:.
 
 In this guide you will get an overview of the contribution workflow from opening an issue, creating a PR, reviewing, and merging the PR.
 
@@ -2008,7 +2010,7 @@ In this guide you will get an overview of the contribution workflow from opening
 
 To get an overview of the project, read the [README](README.md) file. Here are some resources to help you get started with open source contributions:
 
-- [Finding ways to contribute to open source on GitHub](https://docs.github.com/en/get-started/exploring-projects-on-github/finding-ways-to-contribute-to-open-source-on-github)
+    - [Finding ways to contribute to open source on GitHub](https://docs.github.com/en/get-started/exploring-projects-on-github/finding-ways-to-contribute-to-open-source-on-github)
 - [Set up Git](https://docs.github.com/en/get-started/quickstart/set-up-git)
 - [GitHub flow](https://docs.github.com/en/get-started/quickstart/github-flow)
 - [Collaborating with pull requests](https://docs.github.com/en/github/collaborating-with-pull-requests)
@@ -2022,7 +2024,7 @@ To get an overview of the project, read the [README](README.md) file. Here are s
 
 #### Create a new issue
 
-If you spot a problem with the docs, [search if an issue already exists](https://docs.github.com/en/github/searching-for-information-on-github/searching-on-github/searching-issues-and-pull-requests#search-by-the-title-body-or-comments). If a related issue doesn't exist, you can open a new issue using a relevant [issue form](https://github.com/{self.userName}/{self.repoName.replace(" ", "-")}/issues/new/choose). 
+If you spot a problem with the docs, [search if an issue already exists](https://docs.github.com/en/github/searching-for-information-on-github/searching-on-github/searching-issues-and-pull-requests#search-by-the-title-body-or-comments). If a related issue doesn't exist, you can open a new issue using a relevant [issue form](https://github.com/{self.userName}/{self.repoName.replace(" ", "-")}/issues/new/choose).
 
 #### Solve an issue
 
@@ -2044,7 +2046,7 @@ Please make sure that the translations are accurate.
 
 Commit the changes once you are happy with them. You can follow this simple two steps:
 
-#### Self-Review
+    #### Self-Review
 
 Once your changes are ready, don't forget to self-review to speed up the review process:zap:.
 
@@ -2052,7 +2054,7 @@ You should always review your own PR first.
 
 For content changes, make sure that you:
 
-- [ ] Confirm that the changes meet the user experience and goals outlined in the content design plan (if there is one).
+    - [ ] Confirm that the changes meet the user experience and goals outlined in the content design plan (if there is one).
 - [ ] Compare your pull request's source changes to staging to confirm that the output matches the source and that everything is rendering as expected. This helps spot issues like typos, content that doesn't follow the style guide, or content that isn't rendering due to versioning problems. Remember that lists and tables can be tricky.
 - [ ] Review the content for technical accuracy.
 - [ ] Copy-edit the changes for grammar, spelling.
@@ -2085,7 +2087,7 @@ For content changes, make sure that you:
 ### Pull Request
 
 When you're finished with the changes, create a pull request, also known as a PR.
-- Fill the "Ready for review" template so that we can review your PR. This template helps reviewers understand your changes as well as the purpose of your pull request. 
+- Fill the "Ready for review" template so that we can review your PR. This template helps reviewers understand your changes as well as the purpose of your pull request.
 - Don't forget to [link PR to issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue) if you are solving one.
 - Enable the checkbox to [allow maintainer edits](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/allowing-changes-to-a-pull-request-branch-created-from-a-fork) so the branch can be updated for a merge.
 Once you submit your PR, a Docs team member will review your proposal. We may ask questions or request for additional information.
@@ -2095,13 +2097,13 @@ Once you submit your PR, a Docs team member will review your proposal. We may as
 
 ### Your PR is merged!
 
-Congratulations :tada::tada: Thanks for your contribution! :sparkles:. 
+Congratulations :tada::tada: Thanks for your contribution! :sparkles:.
 
-Once your PR is merged, your contributions will be publicly visible on the [{self.repoName}](https://github.com/{self.userName}/{self.repoName.replace(" ", "-")}) page. 
+Once your PR is merged, your contributions will be publicly visible on the [{self.repoName}](https://github.com/{self.userName}/{self.repoName.replace(" ", "-")}) page.
 
 Now that you are part of the {self.repoName} community, welcome to the team :cocktail:.
 """
-    
+
     def security(self):
         return f"""# Security Policy
 
@@ -2109,7 +2111,7 @@ Now that you are part of the {self.repoName} community, welcome to the team :coc
 
 Under these versions, you can report vulnerabilities:
 
-| Version           | Supported          |
+    | Version           | Supported          |
 | ----------------- | ------------------ |
 | {self.version}    | :white_check_mark: |
 | < {self.version}  | :x:                |
@@ -2183,7 +2185,7 @@ A clear and concise description of what the bug is.
 
 **To Reproduce**
 Steps to reproduce the behaviour:
-1. Go to '...'
+    1. Go to '...'
 2. Click on '....'
 3. Scroll down to '....'
 4. See error
@@ -2255,7 +2257,7 @@ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
 furnished to do so, subject to the following conditions:
 
-The above copyright notice and this permission notice shall be included in all
+    The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
@@ -2283,7 +2285,7 @@ OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 PERFORMANCE OF THIS SOFTWARE."""
         elif self.licenseType == "Apache License 2.0":
             return f"""Apache License
-                           Version 2.0, January 2004
+        Version 2.0, January 2004
                         http://www.apache.org/licenses/
 
    TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
@@ -2364,7 +2366,7 @@ PERFORMANCE OF THIS SOFTWARE."""
       Contribution(s) alone or by combination of their Contribution(s)
       with the Work to which such Contribution(s) was submitted. If You
       institute patent litigation against any entity (including a
-      cross-claim or counterclaim in a lawsuit) alleging that the Work
+                                                      cross-claim or counterclaim in a lawsuit) alleging that the Work
       or a Contribution incorporated within the Work constitutes direct
       or contributory patent infringement, then any patent licenses
       granted to You under this License for that Work shall terminate
@@ -2375,7 +2377,7 @@ PERFORMANCE OF THIS SOFTWARE."""
       modifications, and in Source or Object form, provided that You
       meet the following conditions:
 
-      (a) You must give any other recipients of the Work or
+          (a) You must give any other recipients of the Work or
           Derivative Works a copy of this License; and
 
       (b) You must cause any modified files to carry prominent notices
@@ -2426,7 +2428,7 @@ PERFORMANCE OF THIS SOFTWARE."""
 
    7. Disclaimer of Warranty. Unless required by applicable law or
       agreed to in writing, Licensor provides the Work (and each
-      Contributor provides its Contributions) on an "AS IS" BASIS,
+                                                        Contributor provides its Contributions) on an "AS IS" BASIS,
       WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
       implied, including, without limitation, any warranties or conditions
       of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A
@@ -2437,13 +2439,13 @@ PERFORMANCE OF THIS SOFTWARE."""
    8. Limitation of Liability. In no event and under no legal theory,
       whether in tort (including negligence), contract, or otherwise,
       unless required by applicable law (such as deliberate and grossly
-      negligent acts) or agreed to in writing, shall any Contributor be
+                                         negligent acts) or agreed to in writing, shall any Contributor be
       liable to You for damages, including any direct, indirect, special,
       incidental, or consequential damages of any character arising as a
       result of this License or out of the use or inability to use the
       Work (including but not limited to damages for loss of goodwill,
-      work stoppage, computer failure or malfunction, or any and all
-      other commercial damages or losses), even if such Contributor
+            work stoppage, computer failure or malfunction, or any and all
+            other commercial damages or losses), even if such Contributor
       has been advised of the possibility of such damages.
 
    9. Accepting Warranty or Additional Liability. While redistributing
@@ -2464,7 +2466,7 @@ PERFORMANCE OF THIS SOFTWARE."""
       To apply the Apache License to your work, attach the following
       boilerplate notice, with the fields enclosed by brackets "[]"
       replaced with your own identifying information. (Don't include
-      the brackets!)  The text should be enclosed in the appropriate
+                                                       the brackets!)  The text should be enclosed in the appropriate
       comment syntax for the file format. We also recommend that a
       file or class name and description of purpose be included on the
       same "printed page" as the copyright notice for easier
@@ -2485,7 +2487,7 @@ PERFORMANCE OF THIS SOFTWARE."""
    limitations under the License."""
         elif self.licenseType == "GNU General Public License v3.0":
             return f"""   GNU GENERAL PUBLIC LICENSE
-                       Version 3, 29 June 2007
+        Version 3, 29 June 2007
 
  Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>
  Everyone is permitted to copy and distribute verbatim copies
@@ -2508,7 +2510,7 @@ your programs, too.
   When we speak of free software, we are referring to freedom, not
 price.  Our General Public Licenses are designed to make sure that you
 have the freedom to distribute copies of free software (and charge for
-them if you wish), that you receive source code or can get it if you
+                                                        them if you wish), that you receive source code or can get it if you
 want it, that you can change the software or use pieces of it in new
 free programs, and that you know you can do these things.
 
@@ -2524,7 +2526,7 @@ or can get the source code.  And you must show them these terms so they
 know their rights.
 
   Developers that use the GNU GPL protect your rights with two steps:
-(1) assert copyright on the software, and (2) offer you this License
+      (1) assert copyright on the software, and (2) offer you this License
 giving you legal permission to copy, distribute and/or modify it.
 
   For the developers' and authors' protection, the GPL clearly explains
@@ -2590,7 +2592,7 @@ a computer network, with no transfer of a copy, is not conveying.
 to the extent that it includes a convenient and prominently visible
 feature that (1) displays an appropriate copyright notice, and (2)
 tells the user that there is no warranty for the work (except to the
-extent that warranties are provided), that licensees may convey the
+                                                       extent that warranties are provided), that licensees may convey the
 work under this License, and how to view a copy of this License.  If
 the interface presents a list of user commands or options, such as a
 menu, a prominent item in the list meets this criterion.
@@ -2619,7 +2621,7 @@ produce the work, or an object code interpreter used to run it.
 
   The "Corresponding Source" for a work in object code form means all
 the source code needed to generate, install, and (for an executable
-work) run the object code and to modify the work, including scripts to
+                                                  work) run the object code and to modify the work, including scripts to
 control those activities.  However, it does not include the work's
 System Libraries, or general-purpose tools or generally available free
 programs which are used unmodified in performing those activities but
@@ -2810,9 +2812,9 @@ Corresponding Source conveyed under this section must be accompanied
 by the Installation Information.  But this requirement does not apply
 if neither you nor any third party retains the ability to install
 modified object code on the User Product (for example, the work has
-been installed in ROM).
+                                          been installed in ROM).
 
-  The requirement to provide Installation Information does not include a
+The requirement to provide Installation Information does not include a
 requirement to continue to provide support service, warranty, or updates
 for a work that has been modified or installed by the recipient, or for
 the User Product in which it has been modified or installed.  Access to a
@@ -2823,7 +2825,7 @@ protocols for communication across the network.
   Corresponding Source conveyed, and Installation Information provided,
 in accord with this section must be in a format that is publicly
 documented (and with an implementation available to the public in
-source code form), and must require no special password or key for
+            source code form), and must require no special password or key for
 unpacking, reading or copying.
 
   7. Additional Terms.
@@ -2840,13 +2842,13 @@ this License without regard to the additional permissions.
   When you convey a copy of a covered work, you may at your option
 remove any additional permissions from that copy, or from any part of
 it.  (Additional permissions may be written to require their own
-removal in certain cases when you modify the work.)  You may place
+      removal in certain cases when you modify the work.)  You may place
 additional permissions on material, added by you to a covered work,
 for which you have or can give appropriate copyright permission.
 
   Notwithstanding any other provision of this License, for material you
 add to a covered work, you may (if authorized by the copyright holders of
-that material) supplement the terms of this License with terms:
+                                that material) supplement the terms of this License with terms:
 
     a) Disclaiming warranty or limiting liability differently from the
     terms of sections 15 and 16 of this License; or
@@ -2867,7 +2869,7 @@ that material) supplement the terms of this License with terms:
 
     f) Requiring indemnification of licensors and authors of that
     material by anyone who conveys the material (or modified versions of
-    it) with contractual assumptions of liability to the recipient, for
+                                                 it) with contractual assumptions of liability to the recipient, for
     any liability that these contractual assumptions directly impose on
     those licensors and authors.
 
@@ -2896,9 +2898,9 @@ the above requirements apply either way.
 provided under this License.  Any attempt otherwise to propagate or
 modify it is void, and will automatically terminate your rights under
 this License (including any patent licenses granted under the third
-paragraph of section 11).
+              paragraph of section 11).
 
-  However, if you cease all violation of this License, then your
+However, if you cease all violation of this License, then your
 license from a particular copyright holder is reinstated (a)
 provisionally, unless and until the copyright holder explicitly and
 finally terminates your license, and (b) permanently, if the copyright
@@ -2978,7 +2980,7 @@ propagate the contents of its contributor version.
   In the following three paragraphs, a "patent license" is any express
 agreement or commitment, however denominated, not to enforce a patent
 (such as an express permission to practice a patent or covenant not to
-sue for patent infringement).  To "grant" such a patent license to a
+ sue for patent infringement).  To "grant" such a patent license to a
 party means to make such an agreement or commitment not to enforce a
 patent against the party.
 
@@ -3026,8 +3028,8 @@ otherwise be available to you under applicable patent law.
   12. No Surrender of Others' Freedom.
 
   If conditions are imposed on you (whether by court order, agreement or
-otherwise) that contradict the conditions of this License, they do not
-excuse you from the conditions of this License.  If you cannot convey a
+                                    otherwise) that contradict the conditions of this License, they do not
+  excuse you from the conditions of this License.  If you cannot convey a
 covered work so as to satisfy simultaneously your obligations under this
 License and any other pertinent obligations, then as a consequence you may
 not convey it at all.  For example, if you agree to terms that obligate you
@@ -3090,8 +3092,8 @@ WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MODIFIES AND/OR CONVEYS
 THE PROGRAM AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES, INCLUDING ANY
 GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE
 USE OR INABILITY TO USE THE PROGRAM (INCLUDING BUT NOT LIMITED TO LOSS OF
-DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY YOU OR THIRD
-PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER PROGRAMS),
+                                     DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY YOU OR THIRD
+                                     PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER PROGRAMS),
 EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF
 SUCH DAMAGES.
 
@@ -3158,6 +3160,7 @@ may consider it more useful to permit linking proprietary applications with
 the library.  If this is what you want to do, use the GNU Lesser General
 Public License instead of this License.  But first, please read
 <https://www.gnu.org/licenses/why-not-lgpl.html>."""
+
 
 class GithubMaker:
     def __init__(self):
@@ -3366,8 +3369,8 @@ class GithubMaker:
                     f.write(questionFile)
                 print("Question template file has been created.")
 
-
         print("All the files created, thank you for using GithubMaker!")
+
 
 if __name__ == "__main__":
     gm = GithubMaker()
