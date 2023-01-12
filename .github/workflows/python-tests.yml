@@ -5,16 +5,18 @@ name: GithubMaker Unit Tests
 
 on:
   push:
-    branches: [ "master" ]
+    branches:
+      - master
   pull_request:
-    branches: [ "master" ]
+    branches:
+      - master
 
 permissions:
   contents: read
 
 jobs:
   build:
-    name: Python Unit Tests
+    name: unit tests
     runs-on: ubuntu-latest
 
     steps:
