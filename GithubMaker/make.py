@@ -3175,11 +3175,11 @@ class GithubMaker:
         self.isOSIgnore = False
         self.isPLIgnore = False
 
-        self.userName = ""
-        self.name = ""
-        self.contactMail = ""
-        self.versionNumber = ""
-        self.repoName = pathlib.Path(__file__).resolve().parent.name
+        self.userName = "-"
+        self.name = "-"
+        self.contactMail = "-"
+        self.versionNumber = "v1.0.0"
+        self.repoName = pathlib.Path('.').resolve().name
 
         self.programmingLanguagesList = ['Python', 'Lua', 'Node', 'C++', 'Jupyter Notebooks', 'Beef', 'Android', 'Arch Linux Packages', 'Autotools', 'Cmake', 'Go', 'Godot', 'Java', 'Kotlin', 'Objective-C', 'Packer', 'Perl', 'Qt', 'R', 'Rails', 'Ruby', 'Rust', 'Sass', 'Swift', 'Unity', 'UnrealEngine', 'VisualStudio', 'VisualStudioCode', 'Vim', 'Xcode', 'Eclipse', 'Emacs', 'JetBrains']
         self.OSList = ['macOS', 'Linux', 'Windows']
@@ -3274,12 +3274,6 @@ class GithubMaker:
 
     def start(self):
         while not self.isCont:
-            self.repoName = self.changeIfNotEmpty("Repository Name", self.repoName)
-            self.userName = self.changeIfNotEmpty("Github User Name", self.userName)
-            self.name = self.changeIfNotEmpty("Full Name", self.name)
-            self.contactMail = self.changeIfNotEmpty("Contact Mail", self.contactMail)
-            self.versionNumber = self.changeIfNotEmpty("Program Version", self.versionNumber)
-
             self.isCodeOfConduct = self.editVar('Code of Conduct (Y/n): ', True)
             self.isContributing = self.editVar('Contributing (Y/n): ', True)
             self.isLicense = self.editVar('License (Y/n): ', True)
@@ -3294,6 +3288,17 @@ class GithubMaker:
             self.isPLIgnore = self.editVar('Programming Language Ignore (Y/n): ', True)
             if self.isPLIgnore:
                 self.selectedPL = self.selectMultiple(self.programmingLanguagesList.copy())
+
+            if self.isReadme or self.isSecurity or self.isGithubTemplates:
+                self.versionNumber = self.changeIfNotEmpty("Program Version", self.versionNumber)
+            if self.isReadme or self.isGithubTemplates or self.isCodeOfConduct or self.isContributing:
+                self.repoName = self.changeIfNotEmpty("Repository Name", self.repoName)
+            if self.isLicense:
+                self.name = self.changeIfNotEmpty("Full Name", self.name)
+            if self.isSecurity or self.isCodeOfConduct:
+                self.contactMail = self.changeIfNotEmpty("Contact Mail", self.contactMail)
+            if self.isGithubTemplates or self.isContributing:
+                self.userName = self.changeIfNotEmpty("Github User Name", self.userName)
 
             self.printSettings()
             self.isCont = self.editVar('Is it ok? (Y/n): ', True)
