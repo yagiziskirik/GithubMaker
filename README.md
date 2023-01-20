@@ -1,5 +1,5 @@
 # GithubMaker
-![Version 1.1.4](https://img.shields.io/badge/version-1.1.4-blue) ![License](https://img.shields.io/badge/Licence-MIT-green) ![Maintenance](https://img.shields.io/maintenance/yes/2023) [![GithubMaker Unit Tests](https://github.com/yagiziskirik/GithubMaker/actions/workflows/python-tests.yml/badge.svg)](https://github.com/yagiziskirik/GithubMaker/actions/workflows/python-tests.yml)
+![Version 1.1.5](https://img.shields.io/badge/version-1.1.5-blue) ![License](https://img.shields.io/badge/Licence-MIT-green) ![Maintenance](https://img.shields.io/maintenance/yes/2023) [![GithubMaker Unit Tests](https://github.com/yagiziskirik/GithubMaker/actions/workflows/python-tests.yml/badge.svg)](https://github.com/yagiziskirik/GithubMaker/actions/workflows/python-tests.yml)
 
 ![PyPI - Downloads](https://img.shields.io/pypi/dm/GithubMaker) ![PyPI - License](https://img.shields.io/pypi/l/GithubMaker) ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/GithubMaker) ![PyPI](https://img.shields.io/pypi/v/GithubMaker) ![PyPI - Wheel](https://img.shields.io/pypi/wheel/GithubMaker) ![PyPI - Implementation](https://img.shields.io/pypi/implementation/GithubMaker)
 
