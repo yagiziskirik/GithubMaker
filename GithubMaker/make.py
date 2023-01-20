@@ -2198,7 +2198,7 @@ If applicable, add screenshots to help explain your problem.
 
 **Device Information (please complete the following information):**
  - OS: [e.g. macOS]
- - {self.repoName} Version: [e.g. v{self.version}]
+ - {self.repoName} Version: [e.g. {self.version}]
 
 **Additional context**
 Add any other context about the problem here.
